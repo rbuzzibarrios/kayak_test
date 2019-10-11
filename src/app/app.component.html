@@ -1,16 +1,13 @@
-<!DOCTYPE html>
-<html>
+<!-- Page Content -->
+<div class='app-header-content'>
+    <div class='container-fluid'>
+        <div class="row">
+            <!--Page Contents-->
+                <app-simple-selector [label]="'Types'" [options]="options">
+                </app-simple-selector>
 
-<head>
-    <base href="."/>
-    <title>ng-bootstrap demo</title>
-</head>
-    <body>
-        <app-simple-selector [label]="'Types'" [options]="options">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
 
-        </app-simple-selector>
-    </body>
-</html>
-
-
-<router-outlet></router-outlet>
