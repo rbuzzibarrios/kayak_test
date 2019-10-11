@@ -27,7 +27,7 @@ export class SimpleSelectorComponent implements OnInit, OnChanges {
      */
     selectorSettings: SimpleSelectorSettings;
 
-    constructor(protected flightTypeService: FlightTypeService) {
+    constructor() {
         this.selectorSettings = this.defaultSettings();
     }
 
@@ -71,8 +71,7 @@ export class SimpleSelectorComponent implements OnInit, OnChanges {
 
     ngOnChanges(changes: SimpleChanges): void {
         if (changes.hasOwnProperty('settings')) {
-            console.log(changes);
-            this.parseSettings(changes['settings'].currentValue as SimpleSelectorSettings);
+            this.parseSettings(changes.settings.currentValue as SimpleSelectorSettings);
             this.loadData();
         }
     }
