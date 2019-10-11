@@ -9,6 +9,8 @@ export class SimpleSelectorComponent implements OnInit {
 
     @Input() label = 'Select'
 
+    @Input() options = []
+
     constructor() {
     }
 
