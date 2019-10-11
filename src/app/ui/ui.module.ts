@@ -1,8 +1,9 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
+import { BookingComponent } from './components/booking/booking.component';
 
 @NgModule({
-    declarations: [],
+    declarations: [BookingComponent],
     imports: [
         CommonModule
     ]
