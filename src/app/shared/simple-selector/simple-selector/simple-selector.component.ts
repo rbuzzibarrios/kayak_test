@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {FlightTypeService} from '../../../services/flight-type/flight-type.service';
 
 @Component({
     selector: 'app-simple-selector',
@@ -7,14 +8,18 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class SimpleSelectorComponent implements OnInit {
 
-    @Input() label = 'Select'
+    @Input() label = 'Select';
 
-    @Input() options = []
+    @Input() options = [];
 
-    constructor() {
+    constructor(protected flightTypeService: FlightTypeService) {
     }
 
     ngOnInit() {
+        this.flightTypeService.getFlightTypeData().subscribe(({data}) => {
+            console.log(data);
+            this.options = data;
+        });
     }
 
 }
