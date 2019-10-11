@@ -15,8 +15,7 @@ export class FlightTypeService extends GeneralService {
     /**
      * Get all FlightTypes.
      */
-    getFlightTypeData(): Observable<any> {
-
+    getData(): Observable<any> {
         return this.http.get<any>(`${this.apiUrl}/fly-type`);
     }
 

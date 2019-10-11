@@ -1,4 +1,6 @@
 import {Component} from '@angular/core';
+import {SimpleSelectorSettings} from './shared/simple-selector/simple-selector/simple-selector.component';
+import {FlightTypeService} from './services/flight-type/flight-type.service';
 
 @Component({
     selector: 'app-root',
@@ -6,7 +8,13 @@ import {Component} from '@angular/core';
     styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-    title = 'kayak'
+    title = 'kayak';
 
-    options = ['sdfas', 'sdfasd', 'sdfas', 'sdfas', 'sdfas', 'sdfas']
+    selectorSettings = {
+        label: 'Types',
+        service: this.flightType,
+    } as SimpleSelectorSettings;
+
+    constructor(protected flightType: FlightTypeService) {
+    }
 }
