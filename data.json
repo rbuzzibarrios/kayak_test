@@ -1,0 +1,46 @@
+{
+  "/fly-type": {
+    "get": {
+      "data": [
+        {
+          "id": 1,
+          "name": "Round-trip"
+        },
+        {
+          "id": 2,
+          "name": "One way"
+        },
+        {
+          "id": 3,
+          "name": "Multi-city"
+        }
+      ]
+    }
+  },
+  "/travel-class": {
+    "get": {
+      "data": [
+        {
+          "id": 1,
+          "name": "Economy"
+        },
+        {
+          "id": 2,
+          "name": "Premium Economy"
+        },
+        {
+          "id": 3,
+          "name": "Business"
+        },
+        {
+          "id": 4,
+          "name": "First"
+        },
+        {
+          "id": 5,
+          "name": "Multiple"
+        }
+      ]
+    }
+  }
+}
