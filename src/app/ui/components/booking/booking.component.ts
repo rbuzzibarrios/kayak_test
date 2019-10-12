@@ -10,9 +10,17 @@ import {FlightTypeService} from '../../../services/flight-type/flight-type.servi
 export class BookingComponent implements OnInit {
 
     /**
-     * Selector settings
+     *  FlightType Selector settings
      */
-    selectorSettings = {
+    flightTypeSelectorSettings = {
+        label: 'Flight Types',
+        service: this.flightType,
+    } as SimpleSelectorSettings;
+
+    /**
+     * Travel class Selector settings
+     */
+    travelClassSelectorSettings = {
         label: 'Flight Types',
         service: this.flightType,
     } as SimpleSelectorSettings;
