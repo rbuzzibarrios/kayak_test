@@ -1,5 +1,4 @@
 import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
-import {FlightTypeService} from '../../../services/flight-type/flight-type.service';
 import * as _ from 'lodash';
 
 export class SimpleSelectorSettings {
