@@ -1,9 +1,7 @@
-<div class="dropdown">
-    <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{selectorSettings.label}}</a>
-    <div class="dropdown-menu">
-        <ng-container>
-            <a *ngFor="let option of options " href="#" class="dropdown-item text-capitalize">{{option.name}}</a>
-        </ng-container>
-    </div>
-</div>
+<mat-form-field>
+    <mat-select [multiple]="false" [(value)]="selectedOption">
+        <mat-option *ngFor="let option of options " [value]="option.id">{{option.name}}</mat-option>
+    </mat-select>
+</mat-form-field>
+
 

@@ -26,6 +26,10 @@ export class SimpleSelectorComponent implements OnInit, OnChanges {
      */
     selectorSettings: SimpleSelectorSettings;
 
+    optionsSelect: Array<any>;
+
+    selectedOption = '';
+
     constructor() {
         this.selectorSettings = this.defaultSettings();
     }
@@ -55,6 +59,7 @@ export class SimpleSelectorComponent implements OnInit, OnChanges {
             this.selectorSettings.service[this.selectorSettings.functionService]()
                 .subscribe(({data}) => {
                     this.options = data;
+                    this.selectedOption = this.options.slice(0, 1).pop().id;
                 });
         }
     }
