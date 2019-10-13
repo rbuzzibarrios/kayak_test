@@ -7,10 +7,20 @@ import {Component, OnInit} from '@angular/core';
 })
 export class SimpleNumberBoxComponent implements OnInit {
 
+    number = 0;
+
     constructor() {
     }
 
     ngOnInit() {
+    }
+
+    onClickIncrementButton(event) {
+        this.number++;
+    }
+
+    onClickDecrementButton(event) {
+        this.number--;
     }
 
 }

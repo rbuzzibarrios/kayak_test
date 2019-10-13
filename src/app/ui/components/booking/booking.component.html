@@ -53,7 +53,7 @@
         <div class="m-1">
             <mat-toolbar>
                 <mat-form-field>
-                    <input matInput [satDatepicker]="resultPicker" [ngClass]="'col-12'">
+                    <input matInput [satDatepicker]="resultPicker">
                     <sat-datepicker #resultPicker
                                     [rangeMode]="true"
                                     [closeAfterSelection]="false">
@@ -63,4 +63,11 @@
             </mat-toolbar>
         </div>
     </div>
+</div>
+
+<div class="row">
+    <label class="text-capitalize">adults</label>
+    <span>18-64</span>
+    <app-simple-number-box></app-simple-number-box>
+
 </div>
