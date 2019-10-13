@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
     selector: 'app-simple-number-box',
@@ -9,6 +9,10 @@ export class SimpleNumberBoxComponent implements OnInit {
 
     @Input() min = 0;
     @Input() max = 0;
+
+    @Output() incremented: EventEmitter<number> = new EventEmitter();
+    @Output() decremented: EventEmitter<number> = new EventEmitter();
+    @Output() change: EventEmitter<number> = new EventEmitter();
 
     number = 0;
 
@@ -33,7 +37,6 @@ export class SimpleNumberBoxComponent implements OnInit {
         this.number = this.min;
     }
 
-
     /**
      * =================================================================================================================
      * Listeners
@@ -42,13 +45,15 @@ export class SimpleNumberBoxComponent implements OnInit {
 
     onClickIncrementButton(event) {
         if (this.canBeIncremented) {
-            this.number++;
+            this.incremented.emit(++this.number);
+            this.change.emit(this.number);
         }
     }
 
     onClickDecrementButton(event) {
         if (this.canBeDecremented) {
-            this.number--;
+            this.decremented.emit(--this.number);
+            this.change.emit(this.number);
         }
     }
 
