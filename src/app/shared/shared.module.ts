@@ -13,6 +13,7 @@ import {
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {SelectAutocompleteModule} from 'mat-select-autocomplete';
 import {SatDatepickerModule, SatNativeDateModule} from 'saturn-datepicker';
+import { SimpleNumberBoxComponent } from './simple-number-box/simple-number-box/simple-number-box.component';
 
 const BASE_MODULE = [
     ReactiveFormsModule,
@@ -25,7 +26,7 @@ const BASE_MODULE = [
     MatDatepickerModule];
 
 @NgModule({
-    declarations: [SimpleSelectorComponent],
+    declarations: [SimpleSelectorComponent, SimpleNumberBoxComponent],
     imports: [
         ...BASE_MODULE,
         CommonModule,
