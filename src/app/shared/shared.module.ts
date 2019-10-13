@@ -15,6 +15,7 @@ import {SelectAutocompleteModule} from 'mat-select-autocomplete';
 import {SatDatepickerModule, SatNativeDateModule} from 'saturn-datepicker';
 import {SimpleNumberBoxComponent} from './simple-number-box/simple-number-box/simple-number-box.component';
 import {OptionPassengerSelectorComponent} from './option-passenger-selector/option-passenger-selector/option-passenger-selector.component';
+import { PassengerSelectorComponent } from './passenger-selector/passenger-selector/passenger-selector.component';
 
 const BASE_MODULE = [
     ReactiveFormsModule,
@@ -29,7 +30,7 @@ const BASE_MODULE = [
 ];
 
 @NgModule({
-    declarations: [SimpleSelectorComponent, SimpleNumberBoxComponent, OptionPassengerSelectorComponent],
+    declarations: [SimpleSelectorComponent, SimpleNumberBoxComponent, OptionPassengerSelectorComponent, PassengerSelectorComponent],
     imports: [
         ...BASE_MODULE,
         CommonModule,
