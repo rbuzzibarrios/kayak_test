@@ -9,21 +9,8 @@
         </div>
 
         <div class="col-6">
-            <mat-expansion-panel>
-                <mat-expansion-panel-header>
-                    <mat-panel-title>
-                    </mat-panel-title>
-                    <mat-panel-description>
-                    </mat-panel-description>
-                </mat-expansion-panel-header>
-
-                <div class="row">
-                    <div class="col-md-12">
-                        <app-option-passenger-selector></app-option-passenger-selector>
-                        <app-option-passenger-selector></app-option-passenger-selector>
-                    </div>
-                </div>
-            </mat-expansion-panel>
+            <app-passenger-selector>
+            </app-passenger-selector>
         </div>
 
         <div class="col-3">
@@ -81,11 +68,4 @@
             </mat-toolbar>
         </div>
     </div>
-</div>
-
-<div class="row">
-    <label class="text-capitalize">adults</label>
-    <span>18-64</span>
-    <app-simple-number-box></app-simple-number-box>
-
 </div>
