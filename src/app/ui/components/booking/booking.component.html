@@ -49,5 +49,18 @@
                 </mat-select-autocomplete>
             </mat-toolbar>
         </div>
+
+        <div class="m-1">
+            <mat-toolbar>
+                <mat-form-field>
+                    <input matInput [satDatepicker]="resultPicker" [ngClass]="'col-12'">
+                    <sat-datepicker #resultPicker
+                                    [rangeMode]="true"
+                                    [closeAfterSelection]="false">
+                    </sat-datepicker>
+                    <sat-datepicker-toggle matSuffix [for]="resultPicker"></sat-datepicker-toggle>
+                </mat-form-field>
+            </mat-toolbar>
+        </div>
     </div>
 </div>

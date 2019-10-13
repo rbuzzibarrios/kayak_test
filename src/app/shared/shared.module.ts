@@ -4,7 +4,7 @@ import {SimpleSelectorComponent} from './simple-selector/simple-selector/simple-
 import {HttpClientModule} from '@angular/common/http';
 import {
     MatAutocompleteModule,
-    MatCheckboxModule,
+    MatCheckboxModule, MatDatepickerModule,
     MatFormFieldModule, MatIconModule,
     MatInputModule,
     MatSelectModule,
@@ -12,8 +12,17 @@ import {
 } from '@angular/material';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {SelectAutocompleteModule} from 'mat-select-autocomplete';
+import {SatDatepickerModule, SatNativeDateModule} from 'saturn-datepicker';
 
-const BASE_MODULE = [ReactiveFormsModule, FormsModule, MatCheckboxModule, SelectAutocompleteModule, MatIconModule];
+const BASE_MODULE = [
+    ReactiveFormsModule,
+    FormsModule,
+    MatCheckboxModule,
+    SelectAutocompleteModule,
+    MatIconModule,
+    SatDatepickerModule,
+    SatNativeDateModule,
+    MatDatepickerModule];
 
 @NgModule({
     declarations: [SimpleSelectorComponent],
