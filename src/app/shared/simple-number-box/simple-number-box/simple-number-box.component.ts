@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
     selector: 'app-simple-number-box',
@@ -7,20 +7,49 @@ import {Component, OnInit} from '@angular/core';
 })
 export class SimpleNumberBoxComponent implements OnInit {
 
+    @Input() min = 0;
+    @Input() max = 0;
+
     number = 0;
 
     constructor() {
     }
 
-    ngOnInit() {
+    /**
+     * =================================================================================================================
+     * Getters & setters
+     * =================================================================================================================
+     */
+
+    get canBeIncremented(): boolean {
+        return this.max === 0 || this.number < this.max;
     }
 
+    get canBeDecremented(): boolean {
+        return this.min === 0 || this.number > this.min;
+    }
+
+    ngOnInit() {
+        this.number = this.min;
+    }
+
+
+    /**
+     * =================================================================================================================
+     * Listeners
+     * =================================================================================================================
+     */
+
     onClickIncrementButton(event) {
-        this.number++;
+        if (this.canBeIncremented) {
+            this.number++;
+        }
     }
 
     onClickDecrementButton(event) {
-        this.number--;
+        if (this.canBeDecremented) {
+            this.number--;
+        }
     }
 
 }
