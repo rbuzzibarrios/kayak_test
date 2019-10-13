@@ -12,4 +12,42 @@
             <app-simple-selector [settings]="travelClassSelectorSettings"></app-simple-selector>
         </div>
     </div>
+
+    <div class="row">
+        <div class="m-1">
+            <mat-toolbar>
+                <mat-toolbar>
+                    <mat-select-autocomplete
+                            class=""
+                            placeholder='From?'
+                            [display]="'name'"
+                            [value]="'id'"
+                            [labelCount]="4"
+                            [options]="origins"
+                            [multiple]="true">
+                    </mat-select-autocomplete>
+                </mat-toolbar>
+            </mat-toolbar>
+        </div>
+
+        <div class="m-1">
+            <mat-toolbar>
+                <mat-icon class="fa fa-sync-alt"></mat-icon>
+            </mat-toolbar>
+        </div>
+
+        <div class="m-1">
+            <mat-toolbar>
+                <mat-select-autocomplete
+                        class=""
+                        placeholder='To?'
+                        [display]="'name'"
+                        [value]="'id'"
+                        [labelCount]="4"
+                        [options]="origins"
+                        [multiple]="true">
+                </mat-select-autocomplete>
+            </mat-toolbar>
+        </div>
+    </div>
 </div>
