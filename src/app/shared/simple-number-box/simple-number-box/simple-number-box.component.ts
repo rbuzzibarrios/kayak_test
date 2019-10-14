@@ -58,5 +58,4 @@ export class SimpleNumberBoxComponent implements OnInit {
             this.changeValue.emit(this.number);
         }
     }
-
 }

@@ -78,5 +78,41 @@
         }
       ]
     }
+  },
+  "/places": {
+    "get": {
+      "data": [
+        {
+          "id": 1,
+          "locationName": "Atlanta, GA",
+          "shortName": "Atlanta (ATL)"
+        },
+        {
+          "id": 2,
+          "locationName": "AMF O'Hare, IL",
+          "shortName": "Chicago (CHI)"
+        },
+        {
+          "id": 3,
+          "locationName": "Boston, MA",
+          "shortName": "Boston (BOS)"
+        },
+        {
+          "id": 4,
+          "locationName": "Barcelona, Spain",
+          "shortName": "Barcelona (BCN)"
+        },
+        {
+          "id": 5,
+          "locationName": "Chatsworth, CA",
+          "shortName": "Los Angeles (LAX)"
+        },
+        {
+          "id": 6,
+          "locationName": "Chicago, IL",
+          "shortName": "Chicago (CHI)"
+        }
+      ]
+    }
   }
 }
