@@ -16,6 +16,7 @@ import {SatDatepickerModule, SatNativeDateModule} from 'saturn-datepicker';
 import {SimpleNumberBoxComponent} from './simple-number-box/simple-number-box/simple-number-box.component';
 import {OptionPassengerSelectorComponent} from './option-passenger-selector/option-passenger-selector/option-passenger-selector.component';
 import {PassengerSelectorComponent} from './passenger-selector/passenger-selector/passenger-selector.component';
+import {PlaceSelectorComponent} from './place-selector/place-selector/place-selector.component';
 
 const BASE_MODULE = [
     ReactiveFormsModule,
@@ -34,7 +35,8 @@ const BASE_MODULE = [
         SimpleSelectorComponent,
         SimpleNumberBoxComponent,
         OptionPassengerSelectorComponent,
-        PassengerSelectorComponent
+        PassengerSelectorComponent,
+        PlaceSelectorComponent
     ],
     imports: [
         ...BASE_MODULE,
@@ -56,7 +58,8 @@ const BASE_MODULE = [
         MatInputModule,
         SimpleNumberBoxComponent,
         OptionPassengerSelectorComponent,
-        PassengerSelectorComponent
+        PassengerSelectorComponent,
+        PlaceSelectorComponent
     ],
 })
 
