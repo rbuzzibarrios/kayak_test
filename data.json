@@ -42,5 +42,41 @@
         }
       ]
     }
+  },
+  "/passenger-type": {
+    "get": {
+      "data": [
+        {
+          "id": 1,
+          "name": "Adults",
+          "age": "18-64"
+        },
+        {
+          "id": 2,
+          "name": "Seniors",
+          "age": "65+"
+        },
+        {
+          "id": 3,
+          "name": "Youth",
+          "age": "12-17"
+        },
+        {
+          "id": 4,
+          "name": "Child",
+          "age": "2-11"
+        },
+        {
+          "id": 5,
+          "name": "See Infant",
+          "age": "under 2"
+        },
+        {
+          "id": 6,
+          "name": "Lap Infant",
+          "age": "under 2"
+        }
+      ]
+    }
   }
 }
