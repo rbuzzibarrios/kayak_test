@@ -25,7 +25,7 @@
                     <mat-select-autocomplete
                             class=""
                             placeholder='From?'
-                            [display]="'name'"
+                            [display]="'locationName'"
                             [value]="'id'"
                             [labelCount]="4"
                             [options]="origins"
@@ -46,10 +46,10 @@
                 <mat-select-autocomplete
                         class=""
                         placeholder='To?'
-                        [display]="'name'"
+                        [display]="'locationName'"
                         [value]="'id'"
                         [labelCount]="4"
-                        [options]="origins"
+                        [options]="[]"
                         [multiple]="true">
                 </mat-select-autocomplete>
             </mat-toolbar>
