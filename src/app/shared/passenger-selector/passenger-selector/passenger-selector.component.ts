@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import {PassengerTypeService} from '../../../services/passenger-type/passenger-type.service';
+import {Observable} from 'rxjs';
 
 @Component({
     selector: 'app-passenger-selector',
@@ -7,10 +9,33 @@ import {Component, OnInit} from '@angular/core';
 })
 export class PassengerSelectorComponent implements OnInit {
 
-    constructor() {
+    options: [];
+
+    constructor(protected passengerTypeService: PassengerTypeService) {
     }
+
+    /**
+     * =================================================================================================================
+     * Getters & setters
+     * =================================================================================================================
+     */
+    get optionsExist(): boolean {
+        return !this.options.length;
+    }
+
+    loadPassengerTypes(): Observable<any> {
+        return this.passengerTypeService.getData();
+    }
+
+    /**
+     * =================================================================================================================
+     * Ng lifecycle hooks
+     * =================================================================================================================
+     */
 
     ngOnInit() {
+        this.loadPassengerTypes().subscribe(({data}) => {
+            this.options = data;
+        });
     }
-
 }

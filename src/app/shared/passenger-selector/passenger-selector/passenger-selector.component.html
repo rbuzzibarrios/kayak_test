@@ -8,8 +8,13 @@
 
     <div class="row">
         <div class="col-md-12">
-            <app-option-passenger-selector></app-option-passenger-selector>
-            <app-option-passenger-selector></app-option-passenger-selector>
+            <ng-container *ngFor="let passengerType of options">
+                <app-option-passenger-selector
+                        [name]="passengerType.name"
+                        [age]="passengerType.age">
+                </app-option-passenger-selector>
+            </ng-container>
         </div>
     </div>
+
 </mat-expansion-panel>

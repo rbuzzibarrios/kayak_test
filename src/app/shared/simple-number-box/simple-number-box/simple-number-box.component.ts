@@ -1,4 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {isNullOrUndefined} from 'util';
+import {isNotNullOrUndefined} from 'codelyzer/util/isNotNullOrUndefined';
 
 @Component({
     selector: 'app-simple-number-box',
@@ -7,12 +9,12 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 })
 export class SimpleNumberBoxComponent implements OnInit {
 
-    @Input() min = 0;
-    @Input() max = 0;
+    @Input() min = null;
+    @Input() max = null;
 
     @Output() incremented: EventEmitter<number> = new EventEmitter();
     @Output() decremented: EventEmitter<number> = new EventEmitter();
-    @Output() change: EventEmitter<number> = new EventEmitter();
+    @Output() changeValue: EventEmitter<number> = new EventEmitter();
 
     number = 0;
 
@@ -26,15 +28,15 @@ export class SimpleNumberBoxComponent implements OnInit {
      */
 
     get canBeIncremented(): boolean {
-        return this.max === 0 || this.number < this.max;
+        return isNullOrUndefined(this.max) || this.number < this.max;
     }
 
     get canBeDecremented(): boolean {
-        return this.min === 0 || this.number > this.min;
+        return isNullOrUndefined(this.min) || this.number > this.min;
     }
 
     ngOnInit() {
-        this.number = this.min;
+        this.number = isNotNullOrUndefined(this.min) ? this.min : 0;
     }
 
     /**
@@ -46,14 +48,14 @@ export class SimpleNumberBoxComponent implements OnInit {
     onClickIncrementButton(event) {
         if (this.canBeIncremented) {
             this.incremented.emit(++this.number);
-            this.change.emit(this.number);
+            this.changeValue.emit(this.number);
         }
     }
 
     onClickDecrementButton(event) {
         if (this.canBeDecremented) {
             this.decremented.emit(--this.number);
-            this.change.emit(this.number);
+            this.changeValue.emit(this.number);
         }
     }
 
