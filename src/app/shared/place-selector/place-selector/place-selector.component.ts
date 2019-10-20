@@ -4,6 +4,11 @@ import {Observable, Subject} from 'rxjs';
 import {debounceTime, delay, filter, map, switchMap, take, takeUntil, tap} from 'rxjs/operators';
 import {PlacesService} from '../../../services/places/places.service';
 
+export enum PlaceSelectorType {
+    ORIGIN = 'origin',
+    DESTINATION = 'destination'
+}
+
 @Component({
     selector: 'app-place-selector',
     templateUrl: './place-selector.component.html',
@@ -12,6 +17,8 @@ import {PlacesService} from '../../../services/places/places.service';
 export class PlaceSelectorComponent implements OnInit, AfterViewInit, OnChanges {
 
     @Input() labelTitle: string;
+
+    @Input() type = PlaceSelectorType.ORIGIN;
 
     filteredPlaces: Observable<any>;
 
@@ -36,6 +43,14 @@ export class PlaceSelectorComponent implements OnInit, AfterViewInit, OnChanges 
 
     get placeHolder(): string {
         return this.labelTitle;
+    }
+
+    get isOrigin(): boolean {
+        return this.type === PlaceSelectorType.ORIGIN;
+    }
+
+    get isDestination(): boolean {
+        return this.type === PlaceSelectorType.DESTINATION;
     }
 
     ngOnInit() {

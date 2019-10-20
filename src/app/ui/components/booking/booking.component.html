@@ -1,14 +1,14 @@
-<div class="border p-lg-5 col-9">
+<div class="border p-lg-5 col-12">
     <div class="h2 font-weight-bold" style="font-family: 'Arial Black'">
         <span>Search hundreds of travel sites at once</span>
     </div>
 
     <div class="row">
-        <div class="col-3">
+        <div class="col-2">
             <app-simple-selector [settings]="flightTypeSelectorSettings"></app-simple-selector>
         </div>
 
-        <div class="col-6">
+        <div class="col-4">
             <app-passenger-selector>
             </app-passenger-selector>
         </div>
@@ -19,27 +19,27 @@
     </div>
 
     <div class="row">
-        <div class="m-1">
+        <div class="col-3">
             <mat-toolbar>
-                <app-place-selector [labelTitle]="'From?'">
+                <app-place-selector [labelTitle]="'From?'" [type]="'origin'">
                 </app-place-selector>
             </mat-toolbar>
         </div>
 
-        <div class="m-1">
+        <div>
             <mat-toolbar>
                 <mat-icon class="fa fa-sync-alt"></mat-icon>
             </mat-toolbar>
         </div>
 
-        <div class="m-1">
+        <div class="col-3">
             <mat-toolbar>
-                <app-place-selector [labelTitle]="'To?'">
+                <app-place-selector [labelTitle]="'To?'" [type]="'destination'">
                 </app-place-selector>
             </mat-toolbar>
         </div>
 
-        <div class="m-1">
+        <div>
             <mat-toolbar>
                 <mat-form-field>
                     <input matInput [satDatepicker]="resultPicker">
