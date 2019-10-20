@@ -1,19 +1,26 @@
 <mat-form-field>
     <mat-icon [ngClass]="isOrigin ? 'fa fa-plane-departure' : isDestination ? 'fa fa-plane-arrival' : ''">
     </mat-icon>
-    <mat-select [multiple]="true"
-                [formControl]="placeServerSideCtrl"
-                [aria-label]="labelTitle">
+    <mat-select
+        [multiple]="true"
+        [formControl]="placeServerSideCtrl"
+        [aria-label]="labelTitle"
+        (selectionChange)="handleSelectionChange($event)">
         <mat-option>
             <mat-icon class="fa fa-plane-departure">
             </mat-icon>
             <ngx-mat-select-search
+                    [noEntriesFoundLabel]="'No places are found'"
                     [placeholderLabel]="placeHolder"
                     [formControl]="placeServerSideFilteringCtrl"
                     [searching]="searching">
             </ngx-mat-select-search>
         </mat-option>
         <mat-option *ngFor="let place of (filteredPlaces | async)?.data" [value]="place">
+            {{place.locationName}}
+        </mat-option>
+
+        <mat-option *ngFor="let place of items" [value]="place">
             {{place.locationName}}
         </mat-option>
     </mat-select>

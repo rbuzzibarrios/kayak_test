@@ -18,13 +18,11 @@ export class PlacesService extends GeneralService {
         return this.http.get<any>(`${this.apiUrl}/places`)
             .pipe(
                 tap((response: any) => {
-                    console.log(response);
                     response.data = response.data
-                        .filter(user => {
-                            console.log(user);
+                        .filter(place => {
                             const filterLength = String(search).length;
                             if (filterLength > 1 && isString(search)) {
-                                return user.locationName.toLowerCase().startsWith(search.toLowerCase());
+                                return place.locationName.toLowerCase().startsWith(search.toLowerCase());
                             }
 
                             return false;

@@ -3,7 +3,7 @@ import {CommonModule} from '@angular/common';
 import {SimpleSelectorComponent} from './simple-selector/simple-selector/simple-selector.component';
 import {HttpClientModule} from '@angular/common/http';
 import {
-    MatAutocompleteModule,
+    MatAutocompleteModule, MatButtonToggleModule,
     MatCheckboxModule, MatDatepickerModule, MatExpansionModule,
     MatFormFieldModule, MatIconModule,
     MatInputModule,
@@ -30,7 +30,8 @@ const BASE_MODULE = [
     MatDatepickerModule,
     MatExpansionModule,
     MatAutocompleteModule,
-    NgxMatSelectSearchModule
+    NgxMatSelectSearchModule,
+    MatButtonToggleModule,
 ];
 
 @NgModule({

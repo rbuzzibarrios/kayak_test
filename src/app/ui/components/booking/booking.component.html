@@ -8,7 +8,7 @@
             <app-simple-selector [settings]="flightTypeSelectorSettings"></app-simple-selector>
         </div>
 
-        <div class="col-4">
+        <div class="col-5">
             <app-passenger-selector>
             </app-passenger-selector>
         </div>
@@ -18,23 +18,36 @@
         </div>
     </div>
 
-    <div class="row">
+    <div class="row mt-2">
         <div class="col-3">
             <mat-toolbar>
-                <app-place-selector [labelTitle]="'From?'" [type]="'origin'">
+                <app-place-selector
+                    #originSelector
+                    [labelTitle]="'From?'"
+                    [type]="'origin'"
+                    (selectedChange)="handleOriginSelectedChange($event)">
                 </app-place-selector>
             </mat-toolbar>
         </div>
 
         <div>
             <mat-toolbar>
-                <mat-icon class="fa fa-sync-alt"></mat-icon>
+                <mat-button-toggle>
+                    <mat-icon
+                            class="fa fa-sync-alt"
+                            (click)="handleSwapButtonClick($event)">
+                    </mat-icon>
+                </mat-button-toggle>
             </mat-toolbar>
         </div>
 
         <div class="col-3">
             <mat-toolbar>
-                <app-place-selector [labelTitle]="'To?'" [type]="'destination'">
+                <app-place-selector
+                    #destinationSelector
+                    [labelTitle]="'To?'"
+                    [type]="'destination'"
+                    (selectedChange)="handleDestinationSelectedChange($event)">
                 </app-place-selector>
             </mat-toolbar>
         </div>

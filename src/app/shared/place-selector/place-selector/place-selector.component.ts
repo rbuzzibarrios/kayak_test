@@ -1,7 +1,7 @@
-import {AfterViewInit, Component, Input, OnChanges, OnInit, SimpleChanges, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
 import {FormControl} from '@angular/forms';
 import {Observable, Subject} from 'rxjs';
-import {debounceTime, delay, filter, map, switchMap, take, takeUntil, tap} from 'rxjs/operators';
+import {debounceTime, delay, filter, switchMap, takeUntil, tap} from 'rxjs/operators';
 import {PlacesService} from '../../../services/places/places.service';
 
 export enum PlaceSelectorType {
@@ -19,6 +19,10 @@ export class PlaceSelectorComponent implements OnInit, AfterViewInit, OnChanges 
     @Input() labelTitle: string;
 
     @Input() type = PlaceSelectorType.ORIGIN;
+
+    @Input() items: Array<any> = [];
+
+    @Output() selectedChange: EventEmitter<any> = new EventEmitter();
 
     filteredPlaces: Observable<any>;
 
@@ -53,12 +57,22 @@ export class PlaceSelectorComponent implements OnInit, AfterViewInit, OnChanges 
         return this.type === PlaceSelectorType.DESTINATION;
     }
 
+    setSelectedItems(items: Array<any>) {
+        this.placeServerSideFilteringCtrl.setValue(' ');
+        this.placeServerSideCtrl.setValue(items);
+        this.items = items;
+        this.selectedChange.emit(this.placeServerSideCtrl.value);
+    }
+
     ngOnInit() {
         // listen for search field value changes
         this.filteredPlaces = this.placeServerSideFilteringCtrl.valueChanges
             .pipe(
                 filter(search => !!search),
-                tap(() => this.searching = true),
+                tap(() => {
+                    this.searching = true;
+                    this.items = [];
+                }),
                 takeUntil(this._onDestroy),
                 debounceTime(200),
                 switchMap(search => this.loadPlaces(search)),
@@ -70,7 +84,12 @@ export class PlaceSelectorComponent implements OnInit, AfterViewInit, OnChanges 
     }
 
     ngOnChanges(changes: SimpleChanges): void {
-        if (changes.hasOwnProperty('labelTitle')) {
+        if (changes.hasOwnProperty('items')) {
+            this.setSelectedItems(changes.items.currentValue);
         }
+    }
+
+    handleSelectionChange(event) {
+        this.selectedChange.emit(this.placeServerSideCtrl.value);
     }
 }
