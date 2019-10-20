@@ -7,7 +7,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 `npm installed`
 `node installed`
 
-## Download by git
+## Download with git
 
 `git clone https://github.com/rbuzzibarrios/kayak_test`
 
@@ -15,13 +15,13 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `npm i`
 
+Run ºnpm install -g mock-json-serverº
+
 ## How to use it?
 ```
 Make virtual host called kayak.test with port 80
 
-Make virtual host called kayak.test with port 8080
-
-Run `mock-json-server --h="kayak.test" --p="8080" data.json` to start mock json server
+Run mock-json-server --h="kayak.test" --p="8080" data.json to start mock json server
 
 Run npm run build:dev
 ```
