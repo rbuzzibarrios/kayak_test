@@ -2,6 +2,32 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.0.
 
+## Prerequisites
+
+`npm installed`
+`node installed`
+
+## Download by git
+
+`git clone https://github.com/rbuzzibarrios/kayak_test`
+
+## Instal
+
+Run `npm i`
+
+## How to use it?
+```
+Make virtual host called kayak.test with port 80
+
+Make virtual host called kayak.test with port 8080
+
+Run `mock-json-server --h="kayak.test" --p="8080" data.json` to start mock json server
+
+Run npm run build:dev
+```
+
+# Description by deafult when create an angular project.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
