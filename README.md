@@ -15,7 +15,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `npm i`
 
-Run ºnpm install -g mock-json-serverº
+Run `npm install -g mock-json-server`
 
 ## How to use it?
 ```
