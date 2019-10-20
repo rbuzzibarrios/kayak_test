@@ -21,17 +21,8 @@
     <div class="row">
         <div class="m-1">
             <mat-toolbar>
-                <mat-toolbar>
-                    <mat-select-autocomplete
-                            class=""
-                            placeholder='From?'
-                            [display]="'locationName'"
-                            [value]="'id'"
-                            [labelCount]="4"
-                            [options]="origins"
-                            [multiple]="true">
-                    </mat-select-autocomplete>
-                </mat-toolbar>
+                <app-place-selector [labelTitle]="'From?'">
+                </app-place-selector>
             </mat-toolbar>
         </div>
 
@@ -43,15 +34,8 @@
 
         <div class="m-1">
             <mat-toolbar>
-                <mat-select-autocomplete
-                        class=""
-                        placeholder='To?'
-                        [display]="'locationName'"
-                        [value]="'id'"
-                        [labelCount]="4"
-                        [options]="[]"
-                        [multiple]="true">
-                </mat-select-autocomplete>
+                <app-place-selector [labelTitle]="'To?'">
+                </app-place-selector>
             </mat-toolbar>
         </div>
 

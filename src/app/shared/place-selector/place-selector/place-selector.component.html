@@ -1,1 +1,15 @@
-<p>place-selector works!</p>
+<mat-form-field>
+    <mat-select [multiple]="true" [formControl]="placeServerSideCtrl" [aria-label]="labelTitle" placeholder="Place">
+        <mat-option>
+            <ngx-mat-select-search
+                    [placeholderLabel]="placeHolder"
+                    [formControl]="placeServerSideFilteringCtrl"
+                    [searching]="searching">
+            </ngx-mat-select-search>
+        </mat-option>
+        <mat-option *ngFor="let place of (filteredPlaces | async)?.data" [value]="place">
+            {{place.locationName}}
+        </mat-option>
+    </mat-select>
+</mat-form-field>
+

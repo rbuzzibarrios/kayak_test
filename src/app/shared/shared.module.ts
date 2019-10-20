@@ -17,6 +17,7 @@ import {SimpleNumberBoxComponent} from './simple-number-box/simple-number-box/si
 import {OptionPassengerSelectorComponent} from './option-passenger-selector/option-passenger-selector/option-passenger-selector.component';
 import {PassengerSelectorComponent} from './passenger-selector/passenger-selector/passenger-selector.component';
 import {PlaceSelectorComponent} from './place-selector/place-selector/place-selector.component';
+import {NgxMatSelectSearchModule} from 'ngx-mat-select-search';
 
 const BASE_MODULE = [
     ReactiveFormsModule,
@@ -27,7 +28,9 @@ const BASE_MODULE = [
     SatDatepickerModule,
     SatNativeDateModule,
     MatDatepickerModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatAutocompleteModule,
+    NgxMatSelectSearchModule
 ];
 
 @NgModule({
