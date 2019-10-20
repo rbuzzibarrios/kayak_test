@@ -11,7 +11,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 `git clone https://github.com/rbuzzibarrios/kayak_test`
 
-## Instal
+## Install
 
 Run `npm i`
 
